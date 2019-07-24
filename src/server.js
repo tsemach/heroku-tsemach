@@ -11,7 +11,8 @@ app.all('*', function (req, res) {
 	// res.status(200).sendFile(basedir + "/index.html");
 })
 
-var server = app.listen($PORT, function () {
+console.log("PORT = ", process.env.PORT);
+var server = app.listen(process.env.PORT, function () {
 
   var host = server.address().address
   var port = server.address().port
