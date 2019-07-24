@@ -7,11 +7,11 @@ app.use(express.static(basedir));
 
 app.all('*', function (req, res) {
 	console.log("got get call, path:", basedir + "/index.html");
-	//res.sendStatus(200).sendFile(__dirname + "/index.html");
-	res.sendFile(basedir + "/index.html");
+	res.send("<h1>heroki works!</h1>");
+	// res.status(200).sendFile(basedir + "/index.html");
 })
 
-var server = app.listen(8081, function () {
+var server = app.listen(8080, function () {
 
   var host = server.address().address
   var port = server.address().port
