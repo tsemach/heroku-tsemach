@@ -3,11 +3,8 @@
   "version": "0.0.1",
   "description": "Intel TODO Application Home Assigment",
   "main": "server.js",
-  "types": "dist/src/index.d.ts",
   "scripts": {
-    "build": "tsc -sourcemap",
     "start": "node server.js",
-    "debug": "nodemon node -r source-map-support/register dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
