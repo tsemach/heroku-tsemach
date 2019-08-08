@@ -2,7 +2,7 @@
   "name": "intel-doto",
   "version": "0.0.1",
   "description": "Intel TODO Application Home Assigment",
-  "main": "dist/src/index.js",
+  "main": "server.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc -sourcemap",
