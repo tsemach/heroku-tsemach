@@ -6,10 +6,9 @@
   "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc -sourcemap",
-    "start": "node -r source-map-support/register dist/src/index.js",
+    "start": "node server.js",
     "debug": "nodemon node -r source-map-support/register dist/src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "tsc -sourcemap"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
