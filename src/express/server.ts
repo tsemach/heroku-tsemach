@@ -14,8 +14,8 @@ export default class Server {
   public app:express.Application = express();
     
   private constructor() {     
-		console.log("DDDDDDDD: _dirname=", __dirname + '/../../../client/dist/');
-		this.app.use(express.static(__dirname + '/../../../client/dist/'));
+		console.log("DDDDDDDD: _dirname=", __dirname + '/../../../heruko/');
+		this.app.use(express.static(__dirname + '/../../../heruko/'));
 
     this.use(this.logger)
     this.use(bodyParser.json());
