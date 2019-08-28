@@ -4,8 +4,10 @@
   "description": "Intel TODO Application Home Assigment",
   "main": "server.js",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc -sourcemap --declaration",
+		"watch": "tsc -sourcemap --declaration -w"
   },
   "repository": {
     "type": "git",
