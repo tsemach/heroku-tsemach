@@ -1,11 +1,11 @@
 
-import ToDos from './todos/todos';
+import Heruko from './heruko/heruko';
 
 class Application {
-  private _todos = new ToDos();
+  private _heuko = new Heruko();
 
-  get todos() {
-    return this._todos
+  get heruko() {
+    return this._heuko
   }
 }
 

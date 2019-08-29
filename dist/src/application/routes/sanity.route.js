@@ -12,10 +12,7 @@ class SanityRoute {
         // route: sanity ------------------------------------------------------------
         let router = express.Router();
         router.get('/', (_, res, __) => {
-            res.json({ success: true, data: { message: 'sanity-route: todo is up' } });
-        });
-        router.get('/todo', (req, res) => {
-            res.json({ success: true, data: { message: 'sanity-route: todo is up' } });
+            res.json({ success: true, data: { message: 'sanity-route: heruko is up' } });
         });
         return router;
         // --------------------------------------------------------------------------

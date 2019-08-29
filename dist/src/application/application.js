@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const todos_1 = require("./todos/todos");
+const heruko_1 = require("./heruko/heruko");
 class Application {
     constructor() {
-        this._todos = new todos_1.default();
+        this._heuko = new heruko_1.default();
     }
-    get todos() {
-        return this._todos;
+    get heruko() {
+        return this._heuko;
     }
 }
 exports.default = new Application();

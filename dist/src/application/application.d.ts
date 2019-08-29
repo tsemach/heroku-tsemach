@@ -1,7 +1,7 @@
-import ToDos from './todos/todos';
+import Heruko from './heruko/heruko';
 declare class Application {
-    private _todos;
-    readonly todos: ToDos;
+    private _heuko;
+    readonly heruko: Heruko;
 }
 declare const _default: Application;
 export default _default;

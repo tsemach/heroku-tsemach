@@ -41,24 +41,24 @@ class UserRoute implements Service {
     // --------------------------------------------------------------------------
 
     // --------------------------------------------------------------------------
-    router.post('/', async (req: express.Request, res: express.Response) => {
-      const { userName, displayName } = req.body; 
-      if (userName) {
-        logger.info('POST:/v1/user - got username = ', userName)
+    // router.post('/', async (req: express.Request, res: express.Response) => {
+    //   const { userName, displayName } = req.body; 
+    //   if (userName) {
+    //     logger.info('POST:/v1/user - got username = ', userName)
 
-        try {  
-          const reply = await Application.todos.createNewUser(userName, displayName);
-           logger.info('POST:/v1/user - add user, reply:', JSON.stringify(reply, undefined, 2));
-           res.json({success: true, data: [reply]});     
-        }
-        catch (e) {
-          logger.error("POST:/v1/user - ERROR:", e, "\n", e.stack);
-          res.json({success: false, data: {error: e}});        }        
+    //     try {  
+    //       const reply = await Application.todos.createNewUser(userName, displayName);
+    //        logger.info('POST:/v1/user - add user, reply:', JSON.stringify(reply, undefined, 2));
+    //        res.json({success: true, data: [reply]});     
+    //     }
+    //     catch (e) {
+    //       logger.error("POST:/v1/user - ERROR:", e, "\n", e.stack);
+    //       res.json({success: false, data: {error: e}});        }        
 
-          return;
-      }
-      res.json({success: false, data: {message: 'anable to user userName field'}});
-    });
+    //       return;
+    //   }
+    //   res.json({success: false, data: {message: 'anable to user userName field'}});
+    // });
 
     router.get('/todo', (req: express.Request, res: express.Response) => {      
       res.json({success: true, data: {message: 'sanity-route: todo is up'}});
