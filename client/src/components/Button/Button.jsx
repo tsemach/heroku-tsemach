@@ -4,10 +4,11 @@ import React from 'react';
 import './Button.scss';
 
 const Button = (props) => {
-  const { text, id, handleClick } = props;
-  
+  const { text, id, handleClick, disabled = true } = props;  
+  const isDisabled = disabled;
+
   return (
-    <button id="button" onClick={() => handleClick(id)}>{text}</button>
+    <button id="button" {...isDisabled ? disabled : ''} onClick={() => handleClick(id)}>{text}</button>
   );
 }
 

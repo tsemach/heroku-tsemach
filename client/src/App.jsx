@@ -29,14 +29,15 @@ console.log("[APP] HERUKO_URL:", process.env.HERUKO_URL)
 class App extends Component {
   constructor() {
     super();
-    this.handleSelected = this.handleSelected.bind(this);
     this.state = {data: []};
+    this.handleSelected = this.handleSelected.bind(this);
+    this.handleDescription = this.handleDescription.bind(this);
   }
   
   async componentDidMount() {    
     console.log(Config.env.HERUKO_URL);    
     try {
-      const reply = await http.get(Config.env.HERUKO_URL);
+      const reply = await http.get(Config.env.HERUKO_URL+'/applications');
       
       console.log("REPLY:", reply.data.data);
       this.setState({data: reply.data.data});
@@ -48,6 +49,14 @@ class App extends Component {
 
   handleSelected (id) {
     console.log("handleSelected: ", id);
+    this.setState({selected: id});
+  }
+
+  handleDescription(link) {
+    console.log("LINK = ", link);
+    if (link) {
+
+    }
   }
 
   render() {    
@@ -55,17 +64,11 @@ class App extends Component {
     return (
       <React.Fragment>    
         <Header/>
-        <div className="app-container">
-          {/* <Route path="/react-css" component={<a target="_blank" href="http://localhost:1234/reac-css">Google</a>}/>  */}
-          {/* <Route path="/react-css" component={() => {          
-            window.location.href = 'http://localhost:1234/react-css'; 
-
-            return <p>sdvsd</p>;
-          }}/>  */}
-          <div className="list-container">
+        <div className="app-container">      
+          {/* <div className="list-container"> */}
             <List data={this.state.data} handleSelected={this.handleSelected}/>
-          </div>
-          <Description content="AAAA"/>
+          {/* </div> */}
+          <Description name={this.state.selected} handleDescription={this.handleDescription}/>
         </div>
       </React.Fragment>
     );

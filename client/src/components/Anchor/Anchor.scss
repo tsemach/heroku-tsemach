@@ -1,5 +1,5 @@
 
-.anchor {
+#anchor {
   margin: 5px 0px;
 
   text-decoration: none; /* get rid of the underline of the anchor */
@@ -16,7 +16,7 @@
 }
 
 /* when overing we reverse the colors of forward and background */
-.anchor:hover {
+#anchor:hover {
   color: #ffffff;
   background-color: black;
 }

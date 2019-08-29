@@ -21,7 +21,7 @@ class HerukoRoute implements Service {
     let router = express.Router();
 
     // --------------------------------------------------------------------------
-    router.get('/', async (req: express.Request, res: express.Response) => {
+    router.get('/applications', async (req: express.Request, res: express.Response) => {
       const { body } = req;
       logger.info("GET:/heruko - get heruko app");
       try {
@@ -31,18 +31,40 @@ class HerukoRoute implements Service {
         // ];
         
         const applications = await Application.heruko.getApplications();
-        
 
-        logger.info("GET:/heruko reply = ", JSON.stringify(applications, undefined, 2));
+
+        logger.info("GET:/heruko/applications reply = ", JSON.stringify(applications, undefined, 2));
         res.json({success: true, data: [...applications]});
       }
       catch (e) {
-        logger.error("GET:/heruko - ERROR:", e, "\n", e.stack);
+        logger.error("GET:/heruko/applications - ERROR:", e, "\n", e.stack);
         res.json({success: false, data: {error: e}});
       }
     });
     // --------------------------------------------------------------------------
 
+    // --------------------------------------------------------------------------
+    router.get('/description', async (req: express.Request, res: express.Response) => {
+      const { name } = req.query;
+      logger.info("GET:/heruko - get heruko app");
+      try {
+        if ( ! name ) {
+          logger.error("GET:/heruko/description - ERROR: name is undefined");
+
+          return res.json({success: false, data: {}});
+        }
+ 
+        const description = await Application.heruko.getDescripion(name);
+
+        logger.info("GET:/heruko/description reply = ", JSON.stringify(description, undefined, 2));
+        res.json({success: true, data: description});
+      }
+      catch (e) {
+        logger.error("GET:/heruko/description - ERROR:", e, "\n", e.stack);
+        res.json({success: false, data: {error: e}});
+      }
+    });
+    // --------------------------------------------------------------------------
     // // --------------------------------------------------------------------------
     // router.put('/', async (req: express.Request, res: express.Response) => {
     //   const { body } = req;

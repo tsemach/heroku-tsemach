@@ -8,9 +8,12 @@ import './Anchor.scss';
 const Anchor = (props) => {
   const { text, link, isBlank } = props;
 
+  console.log("BBBBBBBB: isBlank", isBlank, link);
+
   const target = isBlank ? 'target="_blank"' : '_self';
+
   return (
-    <a className="anchor" target={target} href={link}>{text}</a>  
+    <a id="anchor" target={target} href={link}>{text}</a>  
   );
 }
 

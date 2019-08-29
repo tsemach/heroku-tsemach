@@ -2,7 +2,8 @@ import createLogger from 'logging';
 const logger = createLogger('ToDos');
 
 import ToDosModel from '../models/intel-todos';
-import HerukoModel from '../models/heruko-applications';
+import HerukoApplicationsModel from '../models/heruko-applications';
+import HerukoDescriptionModel from '../models/heruko-description';
 import {ToDoAddItemType, ToDoAddType, ToDoEditedType, ToDoDeleteType} from '../commond/todos.type';
 
 class Heruko {
@@ -29,7 +30,13 @@ class Heruko {
   getApplications(): any {
     logger.info(`${this.prefix('getApplications')} going to get all applications`);
 
-    return HerukoModel.find({});
+    return HerukoApplicationsModel.find({});
+  }
+  
+  getDescripion(name: string): any {
+    logger.info(`${this.prefix('getApplications')} going to get all applications`);
+
+    return HerukoDescriptionModel.findOne({name});
   }
 
   addToDo(data: ToDoAddType) {    

@@ -1,0 +1,51 @@
+.description-container {
+  flex: 2.2;
+  // border: solid green;
+  display: flex;
+  flex-direction: column;    
+
+  .description-paragraph {
+    flex: 0.9;
+    margin: 10px 40px;
+    flex-basis: 85%;
+    // border: solid blue;
+  }
+
+  .description-footer {
+    display: flex;
+    // align-items: flex-end;  
+    justify-content: space-evenly;      
+    align-items: center;
+    margin-bottom: 100px;
+    // border: solid red;
+
+    #button, #anchor {    
+      // margin: 5px 10px;            
+      flex-basis: 15%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2em;
+      letter-spacing: 0.4px;
+      // padding: .3em 2em .3em 2em;
+      padding: 0 0;
+      color: #866565;
+      border-radius: 20px;
+      background-color: white;
+      height: auto;  
+      line-height: 40px;
+      border: solid 0.5px;
+      text-align: center;            
+    }
+
+    /* when overing we reverse the colors of forward and background */
+    #button:hover, #anchor:hover {
+      color: #ffffff;
+      background-color: black;
+    }
+
+    #button:focus, #anchor:focus {  
+      outline: none
+    }
+  }
+
+}
+
