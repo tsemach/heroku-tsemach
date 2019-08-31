@@ -1,0 +1,63 @@
+[
+	{
+		"name": "tsemach.github.io",
+		"github": {
+			"link": "https://github.com/tsemach/tsemach.github.io",
+			"blank": "true"
+		},
+		"project": { 
+			"link": "https://tsemach.github.io",
+			"blank": "true"
+		},
+		"npmurl": { 
+			"link": "#",
+			"blank": "false"
+		}
+	},
+	{
+		"name": "react-css",
+		"github": {
+			"link": "https://github.com/tsemach/React-CSS",
+			"blank": "true"
+		},
+		"project": { 
+			"link": "https://tsemach.github.io/react-css",
+			"blank": "true"
+		},
+		"npmurl": { 
+			"link": "#",
+			"blank": "false"
+		}
+	},
+	{
+		"name": "typescript-publisher",
+		"github": {
+			"link": "https://github.com/tsemach/typescript-publisher",
+			"blank": "true"
+		},
+		"project": { 
+			"link": "#",
+			"blank": "false"
+		},
+		"npmurl": { 
+			"link": "https://www.npmjs.com/package/rx-txjs-publisher",
+			"blank": "true"
+		}
+	},
+	{
+		"name": "typescript-txjs",
+		"github": {
+			"link": "https://github.com/tsemach/typescript-txjs",
+			"blank": "true"
+		},
+		"project": { 
+			"link": "#",
+			"blank": "false"
+		},
+		"npmurl": { 
+			"link": "https://www.npmjs.com/package/rx-txjs",
+			"blank": "true"
+		}
+	}
+]
+

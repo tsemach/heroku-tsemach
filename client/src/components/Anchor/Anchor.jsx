@@ -6,14 +6,15 @@ import React from 'react';
 import './Anchor.scss';
 
 const Anchor = (props) => {
-  const { text, link, isBlank } = props;
+  const { text, goto } = props;
 
-  console.log("BBBBBBBB: isBlank", isBlank, link);
+  //console.log("[Anchor::render] is called isBlank", isBlank, link);
+  console.log("[Anchor::render] is called isBlank", goto.blank, goto.link);
 
-  const target = isBlank ? 'target="_blank"' : '_self';
+  const target = goto.blank ? 'target="_blank"' : '_self';
 
   return (
-    <a id="anchor" target={target} href={link}>{text}</a>  
+    <a id="anchor" target={target} href={goto.link}>{text}</a>  
   );
 }
 

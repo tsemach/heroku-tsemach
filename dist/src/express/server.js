@@ -9,7 +9,7 @@ class Server {
     constructor() {
         //public express: express.Application;
         this.app = express();
-        console.log("DDDDDDDD: _dirname=", __dirname + '/../../../heruko/');
+        console.log("Server: _dirname=", __dirname + '/../../../heruko/');
         this.app.use(express.static(__dirname + '/../../../heruko/'));
         this.use(this.logger);
         this.use(bodyParser.json());

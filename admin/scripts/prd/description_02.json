@@ -1,0 +1,16 @@
+{
+	"name": "react-css",
+	"github": {
+		"link": "https://github.com/tsemach/React-CSS",
+		"blank": "true"
+	},
+	"project": { 
+		"link": "https://tsemach.github.io/react-css",
+		"blank": "true"
+	},
+	"npmurl": { 
+		"link": "#",
+		"blank": "false"
+	}
+}
+

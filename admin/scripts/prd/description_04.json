@@ -1,0 +1,16 @@
+{
+	"name": "typescript-txjs",
+	"github": {
+		"link": "https://github.com/tsemach/typescript-txjs",
+		"blank": "true"
+	},
+	"project": { 
+		"link": "#",
+		"blank": "false"
+	},
+	"npmurl": { 
+		"link": "https://www.npmjs.com/package/rx-txjs",
+		"blank": "true"
+	}
+}
+

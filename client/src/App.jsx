@@ -29,46 +29,64 @@ console.log("[APP] HERUKO_URL:", process.env.HERUKO_URL)
 class App extends Component {
   constructor() {
     super();
-    this.state = {data: []};
+    //this.state = {applications: []};
+    this.state = {selected: undefined};
     this.handleSelected = this.handleSelected.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
   }
   
-  async componentDidMount() {    
-    console.log(Config.env.HERUKO_URL);    
-    try {
-      const reply = await http.get(Config.env.HERUKO_URL+'/applications');
+  // async componentDidMount() {    
+  //   console.log("[App::componentDidMount] is called,", Config.env.HERUKO_URL);    
+  //   try {
+  //     const reply = await http.get(Config.env.HERUKO_URL+'/applications');
       
-      console.log("REPLY:", reply.data.data);
-      this.setState({data: reply.data.data});
-    }
-    catch (e) {
-      console.error(e.message);
-    }
-  }
+  //     console.log("[App::getDerivedStateFromProps] REPLY:", reply.data.data);
+  //     this.setState({applications: reply.data.data});      
+  //   }
+  //   catch (e) {
+  //     console.error(e.message);
+  //   }
+  //   console.log("[App::componentDidMount] returned");
+  // }
+
+  // static async getDerivedStateFromProps(_props, _state) {
+  //   const state = { ..._state };
+  //   console.log("[App::getDerivedStateFromProps] called");
+  //   try {
+  //     const reply = await http.get(Config.env.HERUKO_URL+'/applications');
+      
+  //     console.log("[App::getDerivedStateFromProps] REPLY:", reply.data.data);
+  //     state.applications = reply.data.data;
+  //   }
+  //   catch (e) {
+  //     console.error(e.message);
+  //   }
+    
+  //   console.log("[App::getDerivedStateFromProps] return ", state);
+  //   return state;
+  // }
 
   handleSelected (id) {
-    console.log("handleSelected: ", id);
-    this.setState({selected: id});
+    console.log("[App::handleSelected] is called, id", id);
+
+    this.setState({selected: id});     
   }
 
   handleDescription(link) {
-    console.log("LINK = ", link);
+    console.log("[App::handleDescription] is called link = ", link);
     if (link) {
 
     }
   }
 
   render() {    
-    console.log("RENDER REPLY:", this.state.data);
+    console.log("[App::reander] is called");
     return (
       <React.Fragment>    
         <Header/>
         <div className="app-container">      
-          {/* <div className="list-container"> */}
-            <List data={this.state.data} handleSelected={this.handleSelected}/>
-          {/* </div> */}
-          <Description name={this.state.selected} handleDescription={this.handleDescription}/>
+            <List /*applications={this.state.applications}*/ handleSelected={this.handleSelected}/>
+            <Description name={this.state.selected} handleDescription={this.handleDescription}/>
         </div>
       </React.Fragment>
     );

@@ -14,45 +14,80 @@ class Description extends Component {
   constructor() {
     super();
     this.state = {descriptions: {}};
-    this.empty = {github: 'None', pages: 'None', npm: 'None', isBlank: {github: false, pages: false, npm: false}};
+    this.empty = {github: {link: '#', blank: false}, project: {link: '#', blank: false}, npmurl: {link: '#', blank: false}}
   }
-  
-  static async getDerivedStateFromProps(props, state) {
-    const { name } = props;
+
+  async componentDidMount() {
+    console.log("[Description::componentDidMount] is called")
+    let { name } = this.props;
 
     if ( ! name ) {
-      return {props, state};
+      return;
     }
 
-    if ( ! state.descriptions[name] ) {
+    if ( ! this.state.descriptions[name] ) {
       const reply = await http.get(`${Config.env.HERUKO_URL+'/description'}?name=${name}`);
-      state.descriptions[name] = reply.data.data;
-    }      
-    return {props, state};
+      this.state.descriptions[name] = reply.data.data;
+    }
+    console.log("[Description::componentDidMount] returned, state=", JSON.stringify(this.state, undefined, 2));
   }
 
+  static async getDerivedStateFromProps(prevProps, nextState) {
+    console.log("[Description::getDerivedStateFromProps] called, prevProps", prevProps);
+    let { name } = prevProps;
+
+    if ( ! name ) {
+      console.log("[Description::getDerivedStateFromProps] return, name is not defined");      
+      return {descriptions: {}};
+    }
+
+    if ( ! nextState.descriptions[name] ) {
+      console.log("[Description::getDerivedStateFromProps] getting from:", `${Config.env.HERUKO_URL+'/description'}?name=${name}`)
+      const reply = await http.get(`${Config.env.HERUKO_URL+'/description'}?name=${name}`);
+      nextState.descriptions[name] = reply.data.data;
+    }
+    console.log("[Description::getDerivedStateFromProps] returned, state=", JSON.stringify(nextState, undefined, 2));    
+
+    return nextState;
+  }
+  /**
+   * "descriptions": {
+   *   "tsemach.github.io": {
+   *     "_id": "5d69a01407735a9c4ac6bae4",
+   *     "name": "tsemach.github.io",
+   *     "github": {
+   *       "link": "https://github.com/tsemach/tsemach.github.io",
+   *       "blank": "true"
+   *     },
+   *     "project": {
+   *       "link": "https://tsemach.github.io",
+   *       "blank": "true"
+   *     },
+   *     "npmurl": {
+   *       "link": "#",
+   *       "blank": "falsee"
+   *     }
+   *   }
+   * }
+   */
   render() {
     const { name, handleDescription } = this.props;
+    console.log("[Description::render] is called, this.props", this.props);
 
-    let description = name && this.state.descriptions[name] ? this.state.descriptions[name] : this.empty;
-
-    let isGitHub = description.github && description.github !== 'None' ? true : false;
-    let isPages = description.pages && description.pages !== 'None'  ? true : false;
-    let isNpm = description.npm && description.npm !== 'None'  ? true : false;
+    const description = name && this.state.descriptions[name] ? this.state.descriptions[name] : this.empty;        
+    const content = description.content;
     
-    let content = description.content;
-    console.log("DDDDDDDDD: ", description);
+    console.log("[Description::render] description:",description);
+
     return (
       <div className="description-container">
-        <div className="description-paragraph">
-        {/* <pre>{content}</pre> */}
-        <ReactMarkdown source={content}/>
+        <div className="description-markdown">          
+          <ReactMarkdown source={content}/>          
         </div>
         <div className="description-footer">
-          {/* <Button disabled={!isGitHub} id={description.github} text='GitHub' handleClick={handleDescription}/> */}
-          <Anchor isBlank={description.isBlank.github} link={description.github} text='GitHub' handleClick={handleDescription}/>
-          <Anchor isBlank={description.isBlank.pages} link={description.pages} text='Project URL' handleClick={handleDescription}/>
-          <Anchor isBlank={description.isBlank.npm} link={description.npm} text='Npm' handleClick={handleDescription}/>
+          <Anchor goto={description.github} text='GitHub' handleClick={handleDescription}/>
+          <Anchor goto={description.project} text='Project URL' handleClick={handleDescription}/>
+          <Anchor goto={description.npmurl} text='Npm' handleClick={handleDescription}/>          
         </div>
       </div>
   )};

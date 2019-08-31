@@ -1,1 +1,1 @@
-import './application/routes';
+import './application/heruko/routes';

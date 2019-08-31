@@ -1,0 +1,16 @@
+{
+	"name": "typescript-publisher",
+	"github": {
+		"link": "https://github.com/tsemach/typescript-publisher",
+		"blank": "true"
+	},
+	"project": { 
+		"link": "#",
+		"blank": "false"
+	},
+	"npmurl": { 
+		"link": "https://www.npmjs.com/package/rx-txjs-publisher",
+		"blank": "true"
+	}
+}
+

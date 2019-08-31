@@ -1,0 +1,16 @@
+{
+	"name": "tsemach.github.io",
+	"github": {
+		"link": "https://github.com/tsemach/tsemach.github.io",
+		"blank": "true"
+	},
+	"project": { 
+		"link": "https://tsemach.github.io",
+		"blank": "true"
+	},
+	"npmurl": { 
+		"link": "#",
+		"blank": "false"
+	}
+}
+
