@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "PORT=1234 npx parcel index.html",
+    "start": "npx parcel index.html",
     "build": "npx parcel build index.html --public-url ./"
   },
   "keywords": [],

@@ -11,4 +11,6 @@ This project use GitHub pages to summary several projects I worked on.
 
 .. and some more stuff.
 
+Add github.com remote
+
 
