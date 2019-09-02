@@ -6,9 +6,9 @@
   "scripts": {
     "start": "NODE_ENV=production node dist/src/index.js",
     "test": "echo \"Error: heroku no test specified\" && exit 1",
-		"debug": "nodemon node dist/src/index.js",
-		"build": "tsc -sourcemap --declaration",
-		"watch": "tsc -sourcemap --declaration -w"
+    "debug": "nodemon node dist/src/index.js",
+    "build": "./node_modules/.bin/tsc -sourcemap --declaration",
+    "watch": "./node_modules/.bin/tsc -sourcemap --declaration -w"
   },
   "repository": {
     "type": "git",
