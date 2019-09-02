@@ -1,6 +1,7 @@
 
 
 console.log("process.env.NODE_ENV =", process.env.NODE_ENV);
+console.log("process.env.PORT =", process.env.PORT);
 
 // if (process.env.NODE_ENV === 'development') {
 //   HERUKO_PORT = process.env.DEV_HERUKO_PORT;
