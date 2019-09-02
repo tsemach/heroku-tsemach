@@ -1,0 +1,248 @@
+.splitter-layout {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.splitter-layout .layout-pane {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: auto;
+}
+
+.splitter-layout .layout-pane.layout-pane-primary {
+  flex: 1 1 auto;
+}
+
+.splitter-layout > .layout-splitter {
+  flex: 0 0 auto;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+  background-color: #ccc;
+}
+
+.splitter-layout .layout-splitter:hover {
+  background-color: #bbb;
+}
+
+.splitter-layout.layout-changing {
+  cursor: col-resize;
+}
+
+.splitter-layout.layout-changing > .layout-splitter {
+  background-color: #aaa;
+}
+
+.splitter-layout.splitter-layout-vertical {
+  flex-direction: column;
+}
+
+.splitter-layout.splitter-layout-vertical.layout-changing {
+  cursor: row-resize;
+}
+
+.splitter-layout.splitter-layout-vertical > .layout-splitter {
+  width: 100%;
+  height: 4px;
+  cursor: row-resize;
+}
+
+.app-container {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.header-container {
+  background-color: whitesmoke;
+  height: 51px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .header-container .header-title .header-titile-name {
+    font-family: proxima-nova;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6em;
+    text-transform: none;
+    font-size: 13px;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.3px;
+    font-size: 17px;
+    text-decoration: none; }
+  .header-container .tsemach-link {
+    text-decoration: underline;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.3px;
+    font-size: 20px;
+    color: #866565; }
+    .header-container .tsemach-link:hover {
+      color: black;
+      background-color: #d6d3d3;
+      border-color: #2ecc71; }
+  .header-container .header-navbar {
+    background-color: darkgreen;
+    font-size: 1.2em;
+    font-weight: bold;
+    flex-basis: 15%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%; }
+    .header-container .header-navbar li {
+      list-style-type: none; }
+      .header-container .header-navbar li > a {
+        background-color: #e7e7e7;
+        text-decoration: none;
+        border-radius: 5px;
+        padding: 1px 5px;
+        border-color: #3498db;
+        font: 400 16px helvetica;
+        font-size: 1em;
+        box-sizing: border-box;
+        color: blue; }
+        .header-container .header-navbar li > a:hover {
+          color: black;
+          background-color: darkgrey;
+          border-color: #2ecc71; }
+  .header-container .header-menu {
+    display: flex; }
+    .header-container .header-menu li {
+      list-style-type: none; }
+      .header-container .header-menu li:nth-child(1) > a {
+        color: #033317; }
+      .header-container .header-menu li:nth-child(2) > a {
+        color: #e74c3c; }
+      .header-container .header-menu li:nth-child(3) > a {
+        color: #3498db;
+        background-color: black; }
+      .header-container .header-menu li:nth-child(4) > a {
+        color: #5e3d09; }
+    .header-container .header-menu li a {
+      padding: 0px 10px;
+      font-size: 1em;
+      text-decoration: none; }
+
+#anchor {
+  margin: 5px 0px;
+  text-decoration: none;
+  /* get rid of the underline of the anchor */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 0.4px;
+  padding: .3em 2em .3em 2em;
+  color: #866565;
+  border-radius: 20px;
+  background-color: white;
+  height: auto;
+  line-height: 50px;
+  border: solid 0.5px; }
+
+/* when overing we reverse the colors of forward and background */
+#anchor:hover {
+  color: #ffffff;
+  background-color: black; }
+
+#button {
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 0.4px;
+  padding: .3em 2em .3em 2em;
+  color: #866565;
+  border-radius: 20px;
+  background-color: white;
+  height: auto;
+  line-height: 50px;
+  border: solid 0.5px;
+  text-align: start; }
+
+/* when overing we reverse the colors of forward and background */
+#button:hover {
+  color: #ffffff;
+  background-color: black; }
+
+#button:focus {
+  outline: none; }
+
+#list {
+  margin-top: 40px;
+  flex: 1;
+  border-right: solid 0.5px;
+  border-color: #dfe9ee;
+  height: 800px; }
+  #list ul {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 0 45px;
+    border-radius: 5px;
+    list-style-type: none;
+    /* this get rid of the bollet point of list items */
+    /* when overing we reverse the colors of forward and background */ }
+    #list ul #button {
+      margin-top: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.5em;
+      letter-spacing: 0.4px;
+      padding: .3em 2em .3em 2em;
+      color: #866565;
+      border-radius: 20px;
+      background-color: white;
+      height: auto;
+      line-height: 50px;
+      border: solid 0.5px;
+      text-align: start; }
+    #list ul #button:hover {
+      color: #ffffff;
+      background-color: black; }
+    #list ul #button:focus {
+      outline: none; }
+
+.description-container {
+  flex: 2.2;
+  display: flex;
+  flex-direction: column;
+  height: 900px; }
+  .description-container .description-markdown {
+    flex: 0.9;
+    margin: 10px 40px;
+    flex-basis: 85%;
+    overflow-y: auto; }
+  .description-container .description-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 100px;
+    border-top: solid 0.5px;
+    border-color: #dfe9ee;
+    padding-top: 10px;
+    /* when overing we reverse the colors of forward and background */ }
+    .description-container .description-footer #button, .description-container .description-footer #anchor {
+      flex-basis: 15%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2em;
+      letter-spacing: 0.4px;
+      padding: 0 0;
+      color: #866565;
+      border-radius: 20px;
+      background-color: white;
+      height: auto;
+      line-height: 40px;
+      border: solid 0.5px;
+      text-align: center; }
+    .description-container .description-footer #button:hover, .description-container .description-footer #anchor:hover {
+      color: #ffffff;
+      background-color: black; }
+    .description-container .description-footer #button:focus, .description-container .description-footer #anchor:focus {
+      outline: none; }
+
+
+/*# sourceMappingURL=/src.6ebfba02.css.map */
