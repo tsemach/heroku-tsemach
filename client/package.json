@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development PORT=1234 npx parcel index.html applications/**/*",
-    "build": "NODE_ENV=production npx parcel build index.html --public-url ./"
+    "start": "PORT=1234 npx parcel index.html",
+    "build": "NODE_ENV=production npx parcel build index.html --public-url ./",
+    "debug": "NODE_ENV=development PORT=1234 npx parcel index.html applications/**/*"
   },
   "keywords": [],
   "author": "Tsemach Mizrachi <tsemach.mizrachi@gmail.com> (http://tsemach.github.io)",
