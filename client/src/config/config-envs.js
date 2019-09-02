@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === 'development') {
 
 if (process.env.NODE_ENV === 'production') {
   HERUKO_PORT = process.env.PORT;
-  console.log("process.env.PRD_HERUKO_URL =", process.env.PRD_HERUKO_HOST + ":" + HERUKO_PORT + '/heruko',);
+  console.log("process.env.PRD_HERUKO_URL =", process.env.PRD_HERUKO_HOST + ":" + process.env.PORT + '/heruko',);
 }
 
 export default {  
@@ -22,7 +22,8 @@ export default {
     HERUKO_URL:          process.env.DEV_HERUKO_HOST + ":" + HERUKO_PORT + '/heruko',
   },
   production: {
-    HERUKO_URL:          process.env.PRD_HERUKO_HOST + ":" + HERUKO_PORT + '/heruko',
+    // HERUKO_URL:          process.env.PRD_HERUKO_HOST + ":" + HERUKO_PORT + '/heruko',
+    HERUKO_URL:          'http://tsemach.herokuapp.com:8080/heruko'
   },
 };
 
