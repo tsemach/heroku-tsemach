@@ -16,11 +16,11 @@ class Config {
   }
 
   isProduction() { 
-    return NODE_ENV === 'production';     
+    return process.env === 'production';     
   }
 
   get env() {
-    return env[NODE_ENV];
+    return env[process.env.NODE_ENV];
   }
 
 }
