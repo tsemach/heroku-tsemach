@@ -1,0 +1,16 @@
+{
+  "name": "react-code",
+  "github": {
+    "link": "https://github.com/tsemach/react-code",
+    "blank": "true"
+  },
+  "project": {
+    "link": "/react-code",
+    "blank": "false"
+  },
+  "npmurl": {
+    "link": "#",
+    "blank": "false"
+  }
+}
+

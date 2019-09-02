@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,UAEE,QAAS,CACT,eAAgB,CAChB,SAAU,CAGZ,MAEE,QAAS","file":"client.8b2abbe9.css","sourceRoot":"..","sourcesContent":["html, body {\n  // height: 100%;\n  margin: 0; \n  overflow: hidden;\n  padding: 0;\n}\n\n#root {\n  // height: 100%;\n  margin: 0; \n}\n\n"]}

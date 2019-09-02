@@ -24,16 +24,19 @@ if [ $# -eq 0 ]; then
 	import applications application_02.json
 	import applications application_03.json
 	import applications application_04.json
+	import applications application_05.json
 
 	import descriptions descriptions_01.json
 	import descriptions descriptions_02.json
 	import descriptions descriptions_03.json
 	import descriptions descriptions_04.json
+	import descriptions descriptions_05.json
 
-	readme react-css react-css master
 	readme tsemach.github.io tsemach.github.io source
 	readme typescript-publisher typescript-publisher master
 	readme typescript-txjs typescript-txjs master
+	readme react-css react-css master
+	readme react-code react-code master
 
 	exit 0
 fi
@@ -41,6 +44,13 @@ fi
 if [ $# -lt 2 ]; then
 	echo ""
 	echo "./import.sh <collection> <filename>"
+	echo "./import.sh contents <name> <project> <branch>"
+	echo ""
+	echo "examples:"
+	echo "	./import.sh applications application_05.json"
+	echo "	./import.sh descriptions description_05.json"
+	echo "	./import.sh contents react-code react-code master"
+	echo ""
 	echo ""
 	exit 1
 fi

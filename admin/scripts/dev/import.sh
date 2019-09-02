@@ -16,4 +16,5 @@ readme react-css react-css master
 readme tsemach.github.io tsemach.github.io source
 readme typescript-publisher typescript-publisher master
 readme typescript-txjs typescript-txjs master
+readme react-code react-code master
 

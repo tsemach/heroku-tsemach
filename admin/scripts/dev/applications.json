@@ -5,18 +5,23 @@
 		"order": 1
 	},
 	{
-		"text": "React-CSS",
-		"name": "react-css",
-		"order": 2
-	},
-	{
 		"text": "TypeScript TxJS",
 		"name": "typescript-txjs",
-		"order": 3
+		"order": 2
 	},
 	{
 		"text": "TypeScript Publisher",
 		"name": "typescript-publisher",
+		"order": 3
+	},
+	{
+		"text": "React CSS",
+		"name": "react-css",
 		"order": 4
+	},
+	{
+		"text": "React Code",
+		"name": "react-code",
+		"order": 5
 	}
 ]
