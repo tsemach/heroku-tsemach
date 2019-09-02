@@ -16,7 +16,7 @@ import List from './components/List';
 import Description from './components/Description';
 
 
-console.log("[APP] HERUKO_URL:", process.env.HERUKO_URL)
+console.log("[APP] HERUKO_URL:", Config.env.HERUKO_URL);
 
 /**
  * from: https://stackoverflow.com/questions/42914666/react-router-external-link?rq=1
