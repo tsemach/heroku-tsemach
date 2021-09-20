@@ -16,7 +16,7 @@
     "http-server": "^0.11.1",
     "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.8.6",
